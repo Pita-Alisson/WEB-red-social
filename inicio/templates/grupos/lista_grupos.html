@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+{% if grupitos %}
+ <h2>Resultados de la búsqueda</h2>
+ <ul>
+    {% for grupo in grupitos %}
+        <li>
+            <a href="#">{{ grupo.nombre }}</a>
+        </li>
+    {% endfor %} 
+ </ul>
+{% else %}
+
+   <p>No se encontraron resultados para "{{ busqueda }}".</p>
+{% endif %}
+</div>
+{% endblock %}
